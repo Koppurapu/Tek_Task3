@@ -1,0 +1,51 @@
+{
+  "dataset": "insurance.csv",
+  "outlier_handling": {
+    "method": "IQR clipping",
+    "columns": [
+      "age",
+      "bmi",
+      "children",
+      "smoker_bmi_interaction",
+      "charges"
+    ],
+    "bounds": {
+      "age": {
+        "lower": -9.0,
+        "upper": 87.0
+      },
+      "bmi": {
+        "lower": 13.7,
+        "upper": 47.290000000000006
+      },
+      "children": {
+        "lower": -3.0,
+        "upper": 5.0
+      },
+      "smoker_bmi_interaction": {
+        "lower": 0.0,
+        "upper": 52.58
+      },
+      "charges": {
+        "lower": -13109.1508975,
+        "upper": 34489.350562499996
+      }
+    }
+  },
+  "metrics": {
+    "LinearRegression": {
+      "MAE": 2747.1459347572386,
+      "RMSE": 4500.962666535417,
+      "R2": 0.8133814002510089
+    },
+    "RandomForestRegressor": {
+      "MAE": 2210.7093407675707,
+      "RMSE": 4301.952924337321,
+      "R2": 0.8295192244383232
+    }
+  },
+  "best_model": "RandomForestRegressor",
+  "artifacts": {
+    "model": "final_insurance_model.joblib"
+  }
+}
